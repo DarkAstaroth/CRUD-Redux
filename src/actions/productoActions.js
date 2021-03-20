@@ -4,3 +4,9 @@ import {
     AGREGAR_PRODUCTO_ERROR
 } from '../types/index';
  
+// crea nuevos productos
+export function crearNuevoProductoAction() {
+    return () => {
+        console.log('Desde Action');
+    }
+}
