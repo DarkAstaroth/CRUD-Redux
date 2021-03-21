@@ -5,6 +5,7 @@ import {
 } from '../types/index';
 
 import clienteAxios from '../config/axios';
+import Swal from 'sweetalert2';
 
 // crea nuevos productos
 export function crearNuevoProductoAction(producto) {
@@ -17,10 +18,24 @@ export function crearNuevoProductoAction(producto) {
             // Si todo sale bien, actualiza el state
             dispatch(agregarProductoExito(producto));
 
+            // alerta
+            Swal.fire(
+                'Correcto',
+                'El producto se agrego correctamente',
+                'success'
+            );
+
         } catch (error) {
 
             // si hay un error cambiar el state
             dispatch(agregarProductoError(true));
+
+            // alerta de error
+            Swal.fire({
+                icon: 'error',
+                title: 'Hubo un error',
+                text: 'Hubo un error, intenta de nuevo'
+            });
         }
     }
 }

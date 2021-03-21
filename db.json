@@ -29,6 +29,16 @@
       "nombre": "Rib Eye 1kg",
       "precio": 800,
       "id": 6
+    },
+    {
+      "nombre": "Jugo de piña ",
+      "precio": 100,
+      "id": 7
+    },
+    {
+      "nombre": "Jugo de fresa",
+      "precio": 500,
+      "id": 8
     }
   ]
 }
