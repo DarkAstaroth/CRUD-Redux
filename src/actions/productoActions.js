@@ -16,7 +16,9 @@ export function crearNuevoProductoAction(producto) {
 
             // Si todo sale bien, actualiza el state
             dispatch(agregarProductoExito(producto));
+
         } catch (error) {
+
             // si hay un error cambiar el state
             dispatch(agregarProductoError(true));
         }
