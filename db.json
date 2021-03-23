@@ -39,6 +39,11 @@
       "nombre": "Jugo de fresa",
       "precio": 500,
       "id": 8
+    },
+    {
+      "nombre": "manuel",
+      "precio": 120,
+      "id": 9
     }
   ]
 }

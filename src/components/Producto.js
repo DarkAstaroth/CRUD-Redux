@@ -1,8 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// redux
+import { useDispatch } from 'react-redux';
+import { borrarProductoAction } from '../actions/productoActions';
+
 const Producto = ({ producto }) => {
     const { nombre, precio, id } = producto;
+    const dispatch = useDispatch();
+
+    //confirmar si desea eliminarlo
+    const confirmarEliminarProducto = id => {
+        
+        // preguntar al usuario
+
+        // pasarlo al dipatch
+        dispatch(borrarProductoAction(id));
+    }
     return (
         <tr>
             <td>{ nombre }</td>
@@ -17,6 +31,7 @@ const Producto = ({ producto }) => {
                 <button
                     type="submit"
                     className="btn btn-danger"
+                    onClick={() => confirmarEliminarProducto(id)}
                 >
                     Eliminar
                 </button>
