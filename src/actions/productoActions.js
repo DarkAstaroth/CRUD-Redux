@@ -12,7 +12,6 @@ import {
 
 import clienteAxios from '../config/axios';
 import Swal from 'sweetalert2';
-import Productos from '../components/Productos';
 
 // crea nuevos productos
 export function crearNuevoProductoAction(producto) {
@@ -95,8 +94,16 @@ const descargaProductoError = () => ({
 // Selecciona y elimina el producto
 export function borrarProductoAction(id) {
     return async (dispatch) => {
+
         dispatch(obtenerProductoEliminar());
-        console.log(id)
+
+        try {
+            await clienteAxios.delete(`/productos/${id}`);
+            dispatch(eliminarProductoExito());
+            dispatch(obtenerProductosAction());
+        } catch (error) {
+            dispatch(eliminarProductoError());
+        }
     }
 }
 
@@ -104,3 +111,12 @@ const obtenerProductoEliminar = id => ({
     type: OBTENER_PRODUCTO_ELIMINAR,
    payload: id 
 });
+
+const eliminarProductoExito = () => ({
+    type: PRODUCTO_ELIMINADO_EXITO
+})
+
+const eliminarProductoError = () => ({
+    type: PRODUCTO_ELIMINADO_ERROR,
+    payload: true
+})
