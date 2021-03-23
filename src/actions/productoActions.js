@@ -101,6 +101,11 @@ export function borrarProductoAction(id) {
             await clienteAxios.delete(`/productos/${id}`);
             dispatch(eliminarProductoExito());
             dispatch(obtenerProductosAction());
+            Swal.fire(
+                'Eliminado!',
+                'El producto se elimino correctamente',
+                'success'
+            );
         } catch (error) {
             dispatch(eliminarProductoError());
         }
@@ -109,7 +114,7 @@ export function borrarProductoAction(id) {
 
 const obtenerProductoEliminar = id => ({
     type: OBTENER_PRODUCTO_ELIMINAR,
-   payload: id 
+    payload: id
 });
 
 const eliminarProductoExito = () => ({

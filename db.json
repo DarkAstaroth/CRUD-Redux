@@ -1,3 +1,9 @@
 {
-  "productos": []
+  "productos": [
+    {
+      "nombre": "Jugo de naranja",
+      "precio": 400,
+      "id": 2
+    }
+  ]
 }
