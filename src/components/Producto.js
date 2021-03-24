@@ -3,7 +3,7 @@ import { Link , useHistory } from 'react-router-dom';
 
 // redux
 import { useDispatch } from 'react-redux';
-import { borrarProductoAction } from '../actions/productoActions';
+import { borrarProductoAction , obtenerProductoEditar } from '../actions/productoActions';
 import Swal from 'sweetalert2';
 
 const Producto = ({ producto }) => {
@@ -39,6 +39,7 @@ const Producto = ({ producto }) => {
 
     // funcion que redirige de forma programada
     const redireccionarEdicion = producto => {
+        dispatch(obtenerProductoEditar(producto));
         history.push(`/productos/editar/${producto.id}`)
     }
 
