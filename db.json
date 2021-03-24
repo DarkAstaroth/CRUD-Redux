@@ -1,9 +1,24 @@
 {
   "productos": [
     {
-      "nombre": "Jugo de naranja",
-      "precio": 400,
+      "nombre": "Jugo de piña ",
+      "precio": 200,
+      "id": 1
+    },
+    {
+      "nombre": "Jugo de Fresa",
+      "precio": 200,
       "id": 2
+    },
+    {
+      "nombre": "Jugo de Tamarindo",
+      "precio": 150,
+      "id": 3
+    },
+    {
+      "nombre": "Helado de fresa",
+      "precio": 20,
+      "id": 4
     }
   ]
 }
