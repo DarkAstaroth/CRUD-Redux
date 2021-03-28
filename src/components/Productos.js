@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { obtenerProductosAction } from '../actions/productoActions';
 import Producto from '../components/Producto';
-import Swal from 'sweetalert2';
 
 const Productos = () => {
 
@@ -12,6 +11,7 @@ const Productos = () => {
         // consultar la api
         const cargarProductos = () => dispatch(obtenerProductosAction());
         cargarProductos();
+        // eslint-disable-next-line
     }, []);
 
     // Obtener el state

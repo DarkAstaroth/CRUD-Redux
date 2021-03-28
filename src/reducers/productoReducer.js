@@ -1,4 +1,3 @@
-import Producto from '../components/Producto';
 import {
     AGREGAR_PRODUCTO,
     AGREGAR_PRODUCTO_EXITO,
@@ -10,7 +9,8 @@ import {
     PRODUCTO_ELIMINADO_EXITO,
     PRODUCTO_ELIMINADO_ERROR,
     OBTENER_PRODUCTO_EDITAR,
-    PRODUCTO_EDITADO_EXITO
+    PRODUCTO_EDITADO_EXITO,
+    PRODUCTO_EDITADO_ERROR
 } from '../types/index';
 
 // Cada Reducer tiene su propio state
@@ -22,7 +22,7 @@ const initialState = {
     productoeditar: null
 }
 
-export default function (state = initialState, action) {
+const productoReducer = function (state = initialState, action) {
     switch (action.type) {
         case COMENZAR_DESCARGA_PRODUCTOS:
         case AGREGAR_PRODUCTO:
@@ -39,6 +39,7 @@ export default function (state = initialState, action) {
         case AGREGAR_PRODUCTO_ERROR:
         case DESCARGAR_PRODUCTOS_ERROR:
         case PRODUCTO_ELIMINADO_ERROR:
+        case PRODUCTO_EDITADO_ERROR:
             return {
                 ...state,
                 loading: false,
@@ -79,3 +80,5 @@ export default function (state = initialState, action) {
             return state;
     }
 }
+
+export default productoReducer
