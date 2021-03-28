@@ -2,23 +2,18 @@
   "productos": [
     {
       "nombre": "Jugo de piña ",
-      "precio": 200,
+      "precio": "2006",
       "id": 1
     },
     {
-      "nombre": "Jugo de Fresa",
-      "precio": 200,
+      "nombre": "Jugo de Fresa con tamarindo",
+      "precio": "899",
       "id": 2
     },
     {
-      "nombre": "Jugo de Tamarindo",
-      "precio": 150,
+      "nombre": "Jugo de piña ",
+      "precio": "120",
       "id": 3
-    },
-    {
-      "nombre": "Helado de fresa",
-      "precio": 20,
-      "id": 4
     }
   ]
 }

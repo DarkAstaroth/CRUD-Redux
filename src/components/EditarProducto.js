@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editarProductoAction } from '../actions/productoActions';
+import { useHistory } from 'react-router-dom';
+
 const EditarProducto = () => {
+
+    const history = useHistory();
+    const dispatch = useDispatch(); 
 
     // nuevo state de producto
     const [producto, setProducto] = useState({
@@ -31,7 +36,8 @@ const EditarProducto = () => {
 
         e.preventDefault();
 
-        editarProductoAction();
+        dispatch(editarProductoAction(producto));
+        history.push('/');
     }
 
     return (
