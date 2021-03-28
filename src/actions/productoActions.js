@@ -138,7 +138,7 @@ export function obtenerProductoEditar(producto) {
 
 const obtenerProductoEditarAction = producto => ({
     type: OBTENER_PRODUCTO_EDITAR,
-    payload: producto    
+    payload: producto
 })
 
 //Edita un registro en la api y state
@@ -150,13 +150,13 @@ export function editarProductoAction(producto) {
             await clienteAxios.put(`/productos/${producto.id}`, producto);
             dispatch(editarProductoExito(producto));
 
-            Swal.fire(
-                'Correcto',
-                'El producto se edito correctamente',
-                'success'
-            );
+            // Swal.fire(
+            //     'Correcto',
+            //     'El producto se edito correctamente',
+            //     'success'
+            // );
         } catch (error) {
-            
+
         }
     }
 }
