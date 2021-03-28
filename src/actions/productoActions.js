@@ -141,7 +141,7 @@ const obtenerProductoEditarAction = producto => ({
 })
 
 //Edita un registro en la api y state
-export function editarProducto(producto) {
+export function editarProductoAction(producto) {
     return async (dispatch) => {
         dispatch(editarProducto(producto));
 
